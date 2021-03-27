@@ -11,4 +11,6 @@ bot.command('ева', (ctx) => {
     eva_bot.start(ctx)
 });
 
-bot.startPolling();
+bot.startPolling((err) => {
+    console.log(err);
+});
