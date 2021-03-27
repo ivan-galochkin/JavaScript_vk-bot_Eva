@@ -12,5 +12,7 @@ bot.command('ева', (ctx) => {
 });
 
 bot.startPolling((err) => {
-    console.log(err);
+    if (err) {
+        console.error(err);
+    }
 });
