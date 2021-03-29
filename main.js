@@ -1,12 +1,10 @@
 const VkBot = require("node-vk-bot-api")
 const express = require('express');
 const EvaBot = require("./eva-bot.js")
-const PORT = process.env.PORT || 8080;
 
 const eva_bot = new EvaBot()
 const app = express();
 const bot = new VkBot(process.env.BOT_TOKEN)
-
 
 bot.command('ева', (ctx) => {
     eva_bot.start(ctx)

@@ -1,5 +1,6 @@
 const VkApiMethods = require('./api_methods')
 const methods = new VkApiMethods()
+const start_time = new Date()
 
 class EvaBot {
     async start(ctx) {
@@ -19,7 +20,15 @@ class EvaBot {
         switch (this.command) {
             case 'список':
                 await this.make_list()
+                break
+            case 'времябезеврейскихпроделок':
+                await this.up_time()
+                break
         }
+    }
+    async up_time() {
+        let time_now = new Date()
+        this.ctx.reply(`${Math.round((time_now - start_time) / 3_600) / 1000} ч`)
     }
 
     async make_list() {
