@@ -27,7 +27,7 @@ class EvaBot {
             // рекурсивная функция выбора случайных пользователей
             let random_int = Math.floor(Math.random() * members.length)
 
-            random_members.push(members[random_int])
+            random_members.push(`${random_members.length + 1}) ` + members[random_int])
             members.splice(random_int, 1);
             n -= 1
 
