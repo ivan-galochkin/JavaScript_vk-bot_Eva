@@ -1,8 +1,10 @@
 const VkBot = require("node-vk-bot-api")
-
+const express = require('express');
 const EvaBot = require("./eva-bot.js")
+const PORT = process.env.PORT || 8080;
+
 const eva_bot = new EvaBot()
-const PORT = process.env.PORT || 5000;
+const app = express();
 const bot = new VkBot(process.env.BOT_TOKEN)
 
 
@@ -15,3 +17,5 @@ bot.startPolling((err) => {
         console.error(err);
     }
 });
+
+app.listen(process.env.PORT);
