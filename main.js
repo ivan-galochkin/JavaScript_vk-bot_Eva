@@ -2,8 +2,7 @@ const VkBot = require("node-vk-bot-api")
 
 const EvaBot = require("./eva-bot.js")
 const eva_bot = new EvaBot()
-
-
+const PORT = process.env.PORT || 5000;
 const bot = new VkBot(process.env.BOT_TOKEN)
 
 
